@@ -12,8 +12,8 @@ function HomePage() {
     return (
         <div className="relative min-h-screen overflow-hidden bg-deep-space-blue">
             <div className="absolute inset-0 opacity-50">
-                <div className="absolute inset-0 bg-gradient-to-br from-molten-lava/20 via-deep-space-blue to-brick-red/20 animate-pulse-slow" />
-                <div className="absolute inset-0 bg-gradient-to-tl from-steel-blue/10 to-transparent animate-pulse-slow delay-1000" />
+                <div className="absolute inset-0 bg-linear-to-br from-molten-lava/20 via-deep-space-blue to-brick-red/20 animate-pulse-slow" />
+                <div className="absolute inset-0 bg-linear-to-tl from-steel-blue/10 to-transparent animate-pulse-slow delay-1000" />
             </div>
 
             <div className="absolute inset-0 backdrop-blur-sm" />
@@ -21,12 +21,6 @@ function HomePage() {
             <div className="relative min-h-screen flex flex-col items-center justify-center px-6 gap-16">
 
                 <div className="text-center space-y-8">
-                    <img
-                        src="/BluffWord_Logo.gif"
-                        alt="Bluffword"
-                        className="w-28 h-28 md:w-36 md:h-36 mx-auto object-contain"
-                    />
-
                     <h1 className="text-6xl md:text-8xl font-thin tracking-widest text-papaya-whip/90">
                         BLUFFWORD
                     </h1>
@@ -39,7 +33,7 @@ function HomePage() {
                 <div className="w-full max-w-sm space-y-6">
 
                     <button
-                        onClick={() => navigate("/enter-name?mode=CREATE")}
+                        onClick={() => navigate("/enter-name", { state: { mode: "CREATE" } })}
                         className="w-full py-4 border border-papaya-whip/30 text-papaya-whip/90 hover:text-papaya-whip hover:border-papaya-whip hover:bg-papaya-whip/5 rounded-xl text-lg tracking-wider transition-all duration-300 backdrop-blur-xl"
                     >
                         Create new room
@@ -57,7 +51,7 @@ function HomePage() {
                         <button
                             onClick={() => {
                                 if (!code) return alert("Enter room code first!");
-                                navigate(`/enter-name?mode=JOIN&code=${code}`);
+                                navigate("/enter-name", { state: { mode: "JOIN", code } });
                             }}
                             className="px-10 py-4 bg-papaya-whip/10 hover:bg-papaya-whip/20 text-papaya-whip border border-papaya-whip/30 rounded-xl font-medium tracking-wider transition-all duration-300 backdrop-blur-xl"
                         >
@@ -66,9 +60,6 @@ function HomePage() {
                     </div>
                 </div>
 
-                {/*<p className="absolute bottom-8 text-steel-blue/40 text-xs tracking-widest">*/}
-                {/*    2025 · Blefuj albo zgiń wykryty*/}
-                {/*</p>*/}
             </div>
         </div>
     );
