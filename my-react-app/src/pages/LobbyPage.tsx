@@ -18,10 +18,7 @@ function LobbyPage() {
 
     function handleDeleteUser() {
     
-    
-    
     }
-
 
         useEffect(() => {
         setGameRoom({

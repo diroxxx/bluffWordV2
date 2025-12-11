@@ -20,15 +20,15 @@ function EnterNamePage() {
         setNickname(e.target.value);
     };
 
+    
     const handleSubmit = () => {
         if (!nickname.trim()) return alert("Enter your nickname first!");
         console.log({ mode, code, nickname });
 
         if (mode === "CREATE") {
-            postCreateRoom(nickname).then((data) => {
+            postCreateRoom(nickname, maxPlayers).then((data) => {
             setUser(data);
-            // Najpierw idź do innej strony, potem do lobby
-            // navigate("/", { replace: true });
+
             setTimeout(() => {
             navigate("/lobby");
 
