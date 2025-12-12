@@ -1,6 +1,6 @@
 import axios from "axios";
-import type { PlayerInfo } from "../types/PlayerInfo";
-import type { JoinGameRoomRequestDto } from "../dtos/JoinGameRoomRequestDto";
+import type { PlayerInfo } from "../../types/PlayerInfo";
+import type { JoinGameRoomRequestDto } from "../../dtos/JoinGameRoomRequestDto";
 
 export const postJoinRoom = async (nickname: string, roomCode: string) => {
     

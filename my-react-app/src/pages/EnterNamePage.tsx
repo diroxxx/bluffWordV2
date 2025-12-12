@@ -3,8 +3,8 @@ import { type ChangeEvent, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useAtom } from "jotai";
 import { playerInfoAtom } from "../atoms/playerInfoAtom";
-import { postCreateRoom } from "../api/postCreateRoom";
-import { postJoinRoom } from "../api/postJoinRoom";
+import { postCreateRoom } from "../LobbyContainer/api/postCreateRoom";
+import { postJoinRoom } from "../LobbyContainer/api/postJoinRoom";
 
 
 function EnterNamePage() {
@@ -20,7 +20,7 @@ function EnterNamePage() {
         setNickname(e.target.value);
     };
 
-    
+
     const handleSubmit = () => {
         if (!nickname.trim()) return alert("Enter your nickname first!");
         console.log({ mode, code, nickname });
